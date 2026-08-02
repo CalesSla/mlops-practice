@@ -1,0 +1,15 @@
+[project]
+name = "lesson-02-dependency-upgrade"
+version = "0.1.0"
+description = "Demo project for updating dependencies with uv"
+
+requires-python = "==3.11.*"
+dependencies = [
+    "scikit-learn==1.5.0",
+    "django==4.2.22"
+]
+
+[dependency-groups]
+dev = [
+    "pip-audit==2.10.0",
+]
