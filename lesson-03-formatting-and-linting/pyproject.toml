@@ -13,5 +13,16 @@ dependencies = [
 
 [dependency-groups]
 dev = [
+    "mypy==1.19.1",
+    "pre-commit==4.5.1",
     "ruff==0.14.11",
 ]
+
+[tool.mypy]
+python_version = "3.11"
+# Требует аннотации для всех функций
+disallow_untyped_defs = true
+# Предупреждает, если функция может вернуть Any
+warn_return_any = true
+# Игнорирует библиотеки без типов (например, старые или научные)
+ignore_missing_imports = true
