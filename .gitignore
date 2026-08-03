@@ -1,1 +1,17 @@
+# Environments
 .venv/
+
+# Python caches
+__pycache__/
+*.py[cod]
+
+# Tool caches
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+
+# Data
+*.csv
+
+# OS / editor
+.DS_Store

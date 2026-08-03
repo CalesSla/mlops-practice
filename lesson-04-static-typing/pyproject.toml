@@ -1,0 +1,35 @@
+[project]
+name = "lesson-04-static-typing"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "veaceslavcalestru@gmail.com", email = "veaceslavcalestru@gmail.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "pandas==2.3.3",
+    "pydantic==2.12.5",
+    "scikit-learn==1.8.0",
+]
+
+[project.scripts]
+lesson-04-static-typing = "lesson_04_static_typing:main"
+
+[build-system]
+requires = ["uv_build>=0.12.1,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "mypy==1.19.1",
+]
+
+[tool.mypy]
+python_version = "3.11"
+# Требует аннотации для всех функций
+disallow_untyped_defs = true
+# Предупреждает, если функция может вернуть Any
+warn_return_any = true
+# Игнорирует библиотеки без типов (например, старые или научные)
+ignore_missing_imports = true 
