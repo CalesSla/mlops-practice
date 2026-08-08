@@ -1,0 +1,32 @@
+[project]
+name = "mypy-tutorial"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "veaceslavcalestru@gmail.com", email = "veaceslavcalestru@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "requests>=2.34.2",
+]
+
+[project.scripts]
+mypy-tutorial = "mypy_tutorial:main"
+
+[build-system]
+requires = ["uv_build>=0.12.1,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "mypy>=2.3.0",
+    "pre-commit>=4.6.1",
+]
+
+[tool.mypy]
+strict = true
+
+[[tool.mypy.overrides]]
+module = "somelib.*"
+ignore_missing_imports = true
