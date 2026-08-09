@@ -1,7 +1,24 @@
 {
-  "data_path": "data.csv",
-  "output_model": "model.pkl",
-  "target": "temperature",
-  "features": ["humidity", "wind_speed", "pressure"],
-  "random_state": 42
+  "data": {
+    "raw": "data/raw/data.csv",
+    "processed": "data/processed/processed_data.csv"
+  },
+  "features": {
+    "selected": ["humidity", "wind_speed", "pressure", "wind_humidity_ratio"],
+    "engineered": ["wind_humidity_ratio"],
+    "new_features": {
+      "wind_humidity_ratio": {
+        "wind_col": "wind_speed",
+        "humidity_col": "humidity",
+        "wind_humidity_ratio_col": "wind_humidity_ratio"
+      }
+    }
+  },
+  "model": {
+    "output_path": "models/serialized_models/model.pkl",
+    "random_state": 42,
+    "test_size": 0.2
+  },
+
+  "target": "temperature"
 }
