@@ -15,4 +15,6 @@ dev = [
     "mkdocs==1.6.1",
     "mkdocs-material==9.7.1",
     "mkdocstrings[python]==1.0.0",
+    "pydoclint==0.8.3",
+    "ruff==0.14.11",
 ]
